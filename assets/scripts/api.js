@@ -1,35 +1,53 @@
 'use strict';
-// sign-up copied from api-token-auth/scripts/sign-up.sh
-#!/bin/bash
-
-#curl "http://localhost:3000/sign-up"
-curl "http://httpbin.org/post"
-  --include
-  --request POST
-  --data-urlencode ""
-
-# --header "Content-Type: application/x-www-form-urlencoded"
 
 
-//sign-in copied from api-token-auth/scripts/sign-in.sh
-#curl "http://localhost:3000/sign-in"
-curl "http://httpbin.org/post"
-  --include
-  --request POST
-  --data-urlencode ""
+const app = require('../app');
+// const getFormFields = require('../../../lib/get-form-fields.js');
 
-  //change-password copied from api-token-auth/scripts/change-password.sh
-  #curl "http://localhost:3000/change-password/${ID}"
-  curl "http://httpbin.org/patch?id=${ID}"
-    --include
-    --request PATCH
-    --data-urlencode ""
+//authApi.signUp(authUi.success, authUi.failure, data);
 
-    //sign-out copied from api-token-auth/scripts/sign-out.sh
-    # curl "http://localhost:3000/sign-out/$ID" \
-    curl "http://httpbin.org/delete?id=$ID" \
-      --include \
-      --request DELETE
+const signUp = function(data){
+  console.log(data);
+  return $.ajax({
+    url: app.host + '/sign-up/',
+    method: 'POST',
+    data,
+  });
+};
 
-# data output from curl doesn't have a trailing newline
-echo
+const signIn = function(data){
+  console.log(data);
+  return $.ajax({
+    url: app.host + '/sign-in/',
+    method: 'POST',
+    data,
+  });
+};
+
+const signOut = function(){
+  return $.ajax({
+    method: 'DELETE',
+    url: app.host + '/sign-out/' + app.user.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+const changePassword = function(data){
+  return $.ajax({
+    method: 'PATCH',
+    url: app.host + '/change-password/' + app.user.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data,
+  });
+};
+
+module.exports = {
+  signUp,
+  signIn,
+  signOut,
+  changePassword,
+};
