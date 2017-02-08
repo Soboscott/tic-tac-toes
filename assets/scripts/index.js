@@ -1,9 +1,17 @@
 'use strict';
+
+// require('./assets/scripts/index.js');
+// //
+// require('./assets/styles/index.scss');
+
+
+
 const board = ["","","","","","","","",""];
 //create the gameboard as an array object
 //global variables
 let currentPlayer = "X";
 let newGame = ('#reset');
+let endGame = board.includes('')===false;
 //function that resets the board
 const resetGameBoard = function() {
   for (let i = 0; board.length; i++) {
@@ -15,7 +23,7 @@ const resetGameBoard = function() {
   newGame.on('click', function(){
     resetGameBoard();
   });
-const Game = function (board) {
+const game = function (board) {
  this.board = board;
  this.currentPlayer = 'x';
  this.wins = [
@@ -60,9 +68,6 @@ let possibleWins = function () {
     }
     }
   };
-//setting global variables
-let   player1 = "X";
-let player2 = "O";
 //starting with currentPlayer, place X on board. If there is X on board then player2 turn and place O on board
 let switchTurn = function (index) {
   if (board[index]===''){
@@ -88,17 +93,31 @@ $('.box').on('click', (event) => {
 $('.box').on('click', function(){
 });
   //this is how each player on the dom changes
-  if (turnClick % 2 === 0) {
-    player = player;
-  } else {
-    player = player;
-  }
+  // const player1 = 'X';
+  // const player2 = 'O';
+
+
+  const yourMove = function (move) {
+    if (board[move] !== '') {
+      console.log('Please try agian.');
+      return;
+    } else if (currentPlayer === 'X') {
+      currentPlayer = 'O';
+    } else if (currentPlayer === 'O') {
+      currentPlayer = 'X';
+    }
+    board[move] = currentPlayer;
+    console.log(board);
+  };
 
 
 module.exports = {
+  game,
   endGame,
   resetGameBoard,
-
+  switchTurn,
+  yourMove
+};
 
 // user require with a reference to bundle the file and use it in this file
 // var example = require('./example');
@@ -107,8 +126,8 @@ module.exports = {
 // scripts
 
 
-// styles
-require('.assets/styles/index.scss');
-require('.assets/scripts/game/api.js');
-require('.assets/scripts/game/events.js');
-require('.assets/scripts/game/ui.js');
+// // styles
+// const index =  require('.assets/styles/index.scss');
+const api = require('.assets/scripts/game/api.js');
+const event = require('.assets/scripts/game/events.js');
+const ui =  require('.assets/scripts/game/ui.js');
