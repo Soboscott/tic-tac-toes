@@ -7,5 +7,5 @@
 // scripts
 require('./assets/scripts/index.js');
 
-// styles
+// styles.
 require('./assets/styles/index.scss');
