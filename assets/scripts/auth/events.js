@@ -64,8 +64,7 @@ const onGetGame = function (event) {
     // .catch(ui.failure)
     ;
 };
-const gameStart = require('./game');
-
+//
 $('#sign-in').show();
 
 
@@ -110,4 +109,5 @@ const addHandlers = () => {
 };
 module.exports = {
   addHandlers,
+
 };
