@@ -11,6 +11,7 @@ const resetGameBoard = function() {
     $('.box').text(''); //box for html boxes
   }
 };
+
 //when clicking new game, this runs resetGameBoard function
   // newGame.on('click', function(){
   //   resetGameBoard();
