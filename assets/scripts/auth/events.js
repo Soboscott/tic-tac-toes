@@ -64,7 +64,14 @@ const onGetGame = function (event) {
     // .catch(ui.failure)
     ;
 };
+const gameStart = require('./game');
 
+$('#sign-in').show();
+
+
+module.exports ={
+  gameStart,
+};
 // const onPatchGame = function (event) {
 //   event.preventDefault();
 //   api.patchGame(store.game.id, event.target.id, game.currentPlayer, game.checkWins())
@@ -82,14 +89,6 @@ const onGetGame = function (event) {
 //     .then(ui.success)
 //     .catch(ui.failure)
 //     ;
-// };
-// const gameUpdate2 = function(event){
-//   event.preventDefault();
-//   console.log('hi');
-//   api.gameUpdate(event.target.id, game.currentPlayer, game.endGame)
-//     .then(ui.success)
-//     .catch(ui.failure);
-// };
 
 
 const addHandlers = () => {
@@ -100,7 +99,7 @@ const addHandlers = () => {
   $('.changebtn').hide();
   // $('#game-log').hide();
   $('#sign-out').hide();
-  $('#reset').hide();
+  // $('#reset').hide();
   // $('#hidePass').hide();
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
