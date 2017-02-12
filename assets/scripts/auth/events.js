@@ -69,9 +69,6 @@ const gameStart = require('./game');
 $('#sign-in').show();
 
 
-module.exports ={
-  gameStart,
-};
 // const onPatchGame = function (event) {
 //   event.preventDefault();
 //   api.patchGame(store.game.id, event.target.id, game.currentPlayer, game.checkWins())
