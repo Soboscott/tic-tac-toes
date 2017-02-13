@@ -2,9 +2,9 @@
 const board = ["", "", "", "", "", "", "", "", ""];
 //create the gameboard as an array object
 //global variables
-const api = require('./auth/api');
-const ui = require('./auth/ui');
-const store = require('./store');
+const api = require('./api');
+const ui = require('./ui');
+const store = require('../store');
 let currentPlayer = "X";
 // let newGame = ('#reset');
 //function that resets the board
