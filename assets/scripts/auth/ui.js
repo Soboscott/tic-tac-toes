@@ -25,7 +25,7 @@ const signInSuccess = () => {
   $('#reset').show();
   $('h2').show();
   $('.changebtn').show();
-
+  $('#wrapper').show();
 };
 const signOutSuccess = () => {
   $('#sign-out').hide();
