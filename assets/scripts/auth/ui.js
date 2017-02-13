@@ -63,5 +63,5 @@ module.exports = {
   getGameSuccess,
   // success,
   // failure,
-  signUpSuccess
+  signUpSuccess,
 };
