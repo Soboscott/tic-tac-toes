@@ -1,3 +1,4 @@
+
 'use strict';
 const board = ["","","","","","","","",""];
 //create the gameboard as an array object
@@ -11,7 +12,6 @@ const resetGameBoard = function() {
     $('.box').text(''); //box for html boxes
   }
 };
-
 //when clicking new game, this runs resetGameBoard function
   // newGame.on('click', function(){
   //   resetGameBoard();
