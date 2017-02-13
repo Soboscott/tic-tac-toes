@@ -14,6 +14,8 @@ const onSignUp = function (event) {
 
   api.signUp(data)
     .then(ui.signUpSuccess)
+    // .then(ui.success)
+
     // .catch(ui.failure)
 ;
 };
@@ -28,7 +30,9 @@ const onSignIn = function (event) {
       return store.user;
     })
     .then(ui.signInSuccess);
-    // .catch(ui.failure);
+
+    // .then(ui.success)
+  // .catch(ui.failure);
 
 };
 const onChangePassword = function (event) {
@@ -65,7 +69,7 @@ const onGetGame = function (event) {
     ;
 };
 //
-$('#sign-in').show();
+// $('#sign-in').show();
 
 
 // const onPatchGame = function (event) {
@@ -91,7 +95,10 @@ const addHandlers = () => {
   $('#sign-up').show();
   $('#sign-in').show();
   $('#wrapper').hide();
+  // $('#wrapper').show();
+
   $('#getGame').hide();
+  // $('#getGame').show();
   $('.changebtn').hide();
   // $('#game-log').hide();
   $('#sign-out').hide();
@@ -103,8 +110,6 @@ const addHandlers = () => {
   $('#sign-out').on('click', onSignOut);
   $('#getGame').on('click', onGetGame);
   $('#reset').on('click', game.onCreateGame);
-  // $('.box').on('click', onPatchGame);
-  // $('.cg').on('click', gameUpdate2);
 
 };
 module.exports = {
