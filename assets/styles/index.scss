@@ -5,3 +5,67 @@
 // .body {
 //   font-family: 'Barrio', cursive;
 // }
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'assets/styles/colors';
+
+// h1 {
+//   text-align: center;
+// }
+//
+.banner {
+  border: 5px solid $black;
+  height: 80px;
+  width: 200px;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+#sign-up {
+  float: left;
+  padding: 50px;
+}
+
+#sign-in {
+  float: left;
+  padding: 50px;
+}
+
+#logout-info {
+  float: right;
+}
+
+#reset-search {
+  float: left;
+}
+
+#board {
+  margin: 0 auto;
+  height: 700px;
+  max-width: 700px;
+  position: relative;;
+}
+
+.box {
+  border: 10px solid $black;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  font-size: 72px;
+  height: 150px;
+  margin: 20px;
+  max-width: 20%;
+  overflow: auto;
+  position: relative;
+  text-align: center;
+}
+
+@media screen and (max-width:700px){
+  .box {
+    min-height: 90px;
+    max-width: 90px
+  }
+}
